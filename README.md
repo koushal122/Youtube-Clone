@@ -15,6 +15,6 @@ For Running this project in your machine you need.\
 
 **After doing Above steps just run command `npm start` it will start project**
 
-**Demo of Above Project**
+
 https://github.com/koushal122/Youtube-Clone/assets/68633415/be18d1ab-dc64-478f-a3f9-af90b9529f6b
 
