@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom'
 
 const Header = () => {
 
-  const [searchText, setSearchText] = useState("");
+  const [searchText, setSearchText] = useState(" ");
   const [suggetions,setSuggetions]=useState([]);
   const [showSugggetion,setShowSugggetion] = useState(false);
   const dispatch = useDispatch();
@@ -28,7 +28,6 @@ const Header = () => {
   const fetchSuggestions = async () => {
     const data = await fetch(YOUTUBE_AUTOSUGGEST_URL + searchText);
     const json = await data.json();
-    console.log(json[1]);
     setSuggetions(json[1]);
   }
 
@@ -43,12 +42,12 @@ const Header = () => {
                <input type="text" placeholder="Search" className=" px-4 py-2 rounded-l-full w-full border border-gray-300"
               onChange={(e) => { setSearchText(e.target.value) }} 
               onFocus={()=>{setShowSugggetion(true)}}
-              onBlur={()=>{setShowSugggetion(false)}}></input>
+              onBlur={()=>{setTimeout(()=>{setShowSugggetion(false)},200)}}></input>
               {showSugggetion && <div className="fixed mt-[2.7rem] w-4/12 rounded-xl border border-gray-100 shadow-xl bg-white" >
               <ul className="text-start m-2">
                 {
                   suggetions.map((suggestion,index)=>{
-                    return  <Link to='/searchresult'> <li className="p-2 hover:bg-gray-200 rounded-md text-black" key={index}> <img src={Search} className="w-4 h-4 inline-block mr-2" alt='search-icon'/>{suggestion}</li></Link>
+                    return  <Link to={"/results?searchQuery="+suggestion} > <li className="p-2 hover:bg-gray-200 rounded-md text-black" key={index}> <img src={Search} className="w-4 h-4 inline-block mr-2" alt='search-icon'/>{suggestion}</li></Link>
                   })
                 }
               </ul>

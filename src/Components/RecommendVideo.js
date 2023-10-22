@@ -25,7 +25,7 @@ const RecommendVideo = ({item}) => {
   return (
     <div className="flex w-full gap-3 px-2 py-1">
         <img src={item?.snippet?.thumbnails?.medium?.url} className="rounded-lg w-2/5" alt='thmbnail' />
-        <div className="flex flex-col">
+        <div className="flex flex-col w-3/5">
           <p className=" font-semibold text-start text-sm text-black">{convertTitle(item?.snippet?.title)}</p>
           <p className="text-start text-sm text-gray-700">{item?.snippet?.channelTitle}</p>
           <p className="text-start text-sm text-gray-700">{abbreviateNumber(item?.statistics?.viewCount)} views</p>

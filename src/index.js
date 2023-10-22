@@ -25,7 +25,7 @@ const router=createBrowserRouter(
           element:<WatchVideo/>
         },
         {
-          path:'/searchresult',
+          path:'/results',
           element:<SearchResult/>
         }
 
