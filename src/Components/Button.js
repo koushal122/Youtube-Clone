@@ -3,11 +3,11 @@ import React from 'react'
 const Button = ({text,active}) => {
     if(active===true){
        return(
-        <button className="py-1 px-2 m-2 bg-black text-white rounded-lg">{text} </button>
+        <li className="active-btn-btnlist" style={{backgroundColor: "black", color: 'white',}}>{text} </li>
        )
     }
   return (
-    <button className="py-1 px-2 m-2 bg-gray-100 text-black rounded-lg max-w-max">{text} </button>
+    <li className="active-btn-btnlist">{text} </li>
   )
 }
 

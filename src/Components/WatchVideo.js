@@ -38,19 +38,20 @@ const WatchVideo = () => {
    },[])
 
   return (
-    <div  className="flex w-full gap-2">
-      <div id="left" className="w-4/6 ml-8">
+    <div  className="flex w-full gap-2 max-sm:flex-col max-md:flex-col max-lg:flex-col">
+      <div id="left" className=" lg:basis-2/3 ml-8 md:basis-full">
         <iframe id="existing-iframe-example"
         height={600}
-        src={"https://www.youtube.com/embed/"+searchParams.get('v')+"?autoplay=1&mute=1&enablejsapi=1"}
+        src={"https://www.youtube.com/embed/"+searchParams.get('v')+"?autoplay=1&mute=1&enablejsapi=1&rel=0"}
         frameborder="0"
         className="mt-2 w-full rounded-lg"
         allowFullScreen={true}
         title={searchParams.get('v')}
         onEnded={searchParams.get('v')}
+        
         ></iframe>
         <h1 className="font-bold text-start my-3 text-lg">{state?.snippet?.title}</h1>
-        <div className="flex justify-between">
+        <div className="flex justify-between max-md:flex-col max-lg:flex-col max-md:gap-3 max-lg:gap-3">
             <div className="flex gap-3">
                <img src={ProfileIcon}  className="w-8 h-8" alt='channel-icon' />
                <div className="flex flex-col items-start">
@@ -88,7 +89,7 @@ const WatchVideo = () => {
         </div>
         <Comments id={searchParams.get('v')}/>
     </div>
-    <div id="right" className=" w-1/3">
+    <div id="right" className=" lg:basis-1/3 md:basis-full">
       <div className="flex flex-wrap">
         {/* <RecommendVideo item={state}/> */}
         {

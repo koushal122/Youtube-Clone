@@ -11,8 +11,7 @@ function Body() {
   return (
     <div className="flex">
         {show?<Sidebar/>:null}
-      
-        <Outlet/>
+         <Outlet/>
     </div>
   )
 }

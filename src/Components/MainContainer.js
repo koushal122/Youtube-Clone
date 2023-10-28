@@ -4,9 +4,9 @@ import VideoContainer from './VideoContainer'
 
 const MainContainer = () => {
   return (
-    <div className="flex flex-col justify-start">
+    <div className=" overflow-x-scroll">
       <ButtonList/>
-      <VideoContainer/>
+      {/* <VideoContainer/> */}
     </div>
   )
 }

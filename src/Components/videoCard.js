@@ -15,8 +15,8 @@ const VideoCard = ({info}) => {
   const {snippet,statistics}=info||{};
   const {thumbnails}=snippet||{};
   return (
-    <div className=" w-96 rounded-lg shadow-lg p-2 m-1">
-        <img src={thumbnails?.medium?.url} className="rounded-lg w-full" alt="thumbnails"/>
+    <div className=" w-72 rounded-lg shadow-lg p-2 m-1">
+        <img src={thumbnails?.medium?.url} className="rounded-lg" alt="thumbnails"/>
         <div className="flex flex-col justify-start">
           <p className="font-bold text-start text-black">{snippet?.title}</p>
           <p className="text-start text-sm text-gray-700">{snippet?.channelTitle}</p>
